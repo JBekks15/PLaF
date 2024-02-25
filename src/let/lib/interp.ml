@@ -34,7 +34,7 @@ let rec eval_expr : expr -> exp_val ea_result =
     eval_expr e2 >>=
     int_of_numVal >>= fun n2 ->
     if n2==0
-    then error "Division by zero!"
+    then error "Division by zero"
     else return (NumVal (n1/n2))
   | Let(id,def,body) ->
     eval_expr def >>= 
